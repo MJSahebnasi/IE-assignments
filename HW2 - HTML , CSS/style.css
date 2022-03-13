@@ -1,0 +1,133 @@
+:root {
+  --white: white;
+  --blue: rgb(67, 140, 223);
+  --black: rgb(0, 0, 0);
+  --yellow: #f1b717;
+  --grey: rgb(63, 63, 63);
+  --orange: #ff8800;
+
+  --shadow: 5px 0px 15px rgba(0,0,0,0.5);
+  --border_radius: 17px;
+}
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-image: url("assets/pic.jpg");
+  
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar { 
+  box-shadow: var(--shadow);
+
+  height: 13%;
+  width: 90%;
+
+  /* position: absolute;
+  top: 7%; */
+
+  background-color: var(--white);
+
+  border-radius: var(--border_radius);
+}
+.navbar img {
+  height: 90%;
+  
+  position: relative;
+  left: 15px;
+  top: 5%;
+}
+.drop-down {
+  
+}
+.main-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.body-cards {
+  border-radius: var(--border_radius);
+  
+  width: 400px;
+  height: 400px;
+  margin-bottom: 50px;
+
+  backdrop-filter: blur(4px);
+
+  box-shadow: var(--shadow);
+}
+.left-card {
+  margin-right: 20px;
+}
+.right-card {
+  
+}
+
+.item {
+  
+}
+.item:hover {
+
+}
+.item.active {
+
+}
+.item.bordered {
+  
+}
+.navbar-items {
+  
+}
+
+
+.icon-burger {
+  
+}
+.icon-burger .line {
+  
+}
+
+.right-card img {
+  
+}
+
+.title {
+  
+}
+
+.data {
+  
+}
+
+
+input[type="text"] {
+}
+input[type="submit"] {
+}
+
+input[type="submit"]:hover {
+ 
+}
+
+input[type="text"]:focus {
+ 
+}
+
+textarea {
+}
+
+textarea:focus {
+}
+::placeholder {
+}
