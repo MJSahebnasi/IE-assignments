@@ -192,6 +192,10 @@ body {
   width: var(--logo_width);
   filter: invert(100%);
 }
+.left_card_grid_element:nth-child(odd){ /* texts */
+  display: flex;
+  align-items: center;
+}
 .left_card_grid_element:nth-child(even){ /* logos */
   width: 42px;
   height: 42px;
