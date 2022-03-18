@@ -9,6 +9,7 @@
   --shadow: 5px 0px 15px rgba(0,0,0,0.5);
   --border_radius: 17px;
   --logo_width: 35px;
+  --open_menu_width:30px;
 }
 * {
   font-family: sans-serif;
@@ -67,6 +68,8 @@ body {
 
   z-index: 2;
 
+  /* background-color:#ff8800; */
+
   /* border:2px solid; */
 }
 .menu_button{
@@ -79,6 +82,22 @@ body {
   background-color: var(--black);
   color: var(--white);
 }
+.open_menu{
+  
+  width: var(--open_menu_width);
+  height: var(--open_menu_width);
+  position: absolute;
+  top: 65px;
+  right:7%;
+
+  display: none;
+}
+.open_menu_line{
+  background-color: var(--orange);
+  height: calc(var(--open_menu_width) / 5);
+  width: var(--open_menu_width);
+}
+/* -------body------- */
 .main-body { /* contains body cards */
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +116,7 @@ body {
 
   box-shadow: var(--shadow);
 }
+/* -------right card------- */
 .right-card {
   display: flex;
 
@@ -182,6 +202,21 @@ body {
   background-color: var(--black);
   padding: 5px;
 }
+
+/* -----------mobile---------- */
+@media screen and (max-width: 740px) {
+  .drop-down{
+    display: none;
+  }
+  .open_menu{
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  z-index: 3;
+  }
+}
+
 .left_card_grid_element div{
 
 }
@@ -243,3 +278,4 @@ textarea:focus {
 }
 ::placeholder {
 }
+
