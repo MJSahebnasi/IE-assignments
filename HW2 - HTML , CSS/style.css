@@ -82,7 +82,7 @@ body {
   color: var(--grey);
 }
 .menu_button.active{
-  border-bottom: 2px solid var(--orange);
+  border-bottom: 3px solid var(--orange);
 }
 .menu_button.active:hover{
   border-color: var(--yellow);
