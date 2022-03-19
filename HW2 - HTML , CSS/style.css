@@ -41,7 +41,6 @@ body {
   max-width: 1200px;
   margin-bottom: 40px;
   margin-top: 35px;
-  /* margin-left:1%; */
 
   box-shadow: var(--shadow);
 
@@ -67,10 +66,6 @@ body {
   width: 60%;
 
   z-index: 2;
-
-  /* background-color:#ff8800; */
-
-  /* border:2px solid; */
 }
 .menu_button{
   cursor: pointer;
@@ -116,8 +111,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  /* border: 2px solid; */
 }
 .body-cards {
   border-radius: var(--border_radius);
@@ -199,6 +192,17 @@ body {
 }
 .right-card img{
   width: 40px;
+}
+/* removing arrows of number input: */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 /* -------left card------- */
 .left-card {
@@ -285,66 +289,3 @@ body {
     z-index: 3;
   }
 }
-
-.left_card_grid_element div{
-
-}
-
-.item {
-  
-}
-.item:hover {
-
-}
-.item.active {
-
-}
-.item.bordered {
-  
-}
-.navbar-items {
-  
-}
-
-
-.icon-burger {
-  
-}
-.icon-burger .line {
-  
-}
-
-.right-card img {
-  
-}
-
-.title {
-  
-}
-
-.data {
-  
-}
-
-
-input[type="text"] {
-}
-input[type="submit"] {
-}
-
-input[type="submit"]:hover {
- 
-}
-
-input[type="text"]:focus {
- 
-}
-
-textarea {
-}
-
-textarea:focus {
-}
-::placeholder {
-}
-
