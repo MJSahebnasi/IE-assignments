@@ -242,7 +242,9 @@ body {
 }
 .left_card_grid_element:hover{
   transform: scale(1.08);
-  /* width: 240px; */
+}
+#left_card_title{
+  transform: scale(1);
 }
 
 /* -----------mobile---------- */
