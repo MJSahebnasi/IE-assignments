@@ -211,7 +211,7 @@ body {
 }
 .left_card_grid_element{
   position: relative;
-  margin-top: 25px;
+  margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -239,6 +239,10 @@ body {
   border-radius: 100%;
   background-color: var(--black);
   padding: 5px;
+}
+.left_card_grid_element:hover{
+  transform: scale(1.08);
+  /* width: 240px; */
 }
 
 /* -----------mobile---------- */
