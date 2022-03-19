@@ -214,6 +214,8 @@ body {
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
+
+  transition-duration: 0.3s;
 }
 #left_card_title{
   grid-column-start: 1;
@@ -240,7 +242,7 @@ body {
   background-color: var(--black);
   padding: 5px;
 }
-.left_card_grid_element:hover{
+.left_card_grid_element:nth-child(odd):hover{
   transform: scale(1.08);
 }
 #left_card_title{
