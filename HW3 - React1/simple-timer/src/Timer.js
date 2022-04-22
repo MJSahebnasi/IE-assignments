@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Timer.css';
 
+var interval = null;
+
 export class Timer extends Component {
     constructor(props){
         super(props);
@@ -9,7 +11,7 @@ export class Timer extends Component {
         };
     }
 
-    increaseTime(){
+    increaseTime() {
         if (this.state.time === 59){
             this.setState({
                 time: 0
@@ -26,15 +28,29 @@ export class Timer extends Component {
         this.setState({
             time: 0
         });
-        setInterval(() => {
+        interval = setInterval(() => {
             this.increaseTime();
           }, 1000);
+    }
+
+    resetTimer = () => {
+        clearInterval(interval);
+        this.setState({
+            time: 0
+        });
+        interval = setInterval(() => {
+            this.increaseTime();
+          }, 1000);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(interval);
     }
 
     render() {
         return <div className="container">
             <div className="timer">{this.state.time}</div>
-            <button>Reset Timer</button>
+            <button onClick={this.resetTimer}>Reset Timer</button>
         </div>;
     }
 }
