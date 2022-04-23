@@ -8,7 +8,7 @@ export default class MovieCard extends React.Component {
                 <img className="card-img" src={this.props.movie.imageUrl} alt=""/>
                 <div className="card-body">
                     <h2 className="card-title">
-                        <Link to={'/movies/'+this.props.movie.id} >
+                        <Link to={`/movies/${this.props.movie.id}`} >
                             {this.props.movie.title}
                         </Link>
                     </h2>

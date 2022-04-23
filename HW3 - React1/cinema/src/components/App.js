@@ -44,19 +44,17 @@ export default function App() {
 
     return (
         <div>
-            {/* <span> */}
+            <Router>
             {movies.map(movie => (
-                <Router key={movie.id}>
-                    <span>
+                    <span key={movie.id}>
                         <Switch>
                             <Route path={'/'} exact render={(props) => <MovieCard movie={movie} />} />
                             <Route path={`/movies/${movie.id}`} exact render={(props) => <MovieDetail id={movie.id} />} />
                             {/* <Route path={'/movies/:id'} exact render={(props) => <MovieDetail id={movie.id} />} /> */}
                         </Switch>
                     </span>
-                </Router>
             ))}
-            {/* </span> */}
+            </Router>
         </div>
     );
 }
