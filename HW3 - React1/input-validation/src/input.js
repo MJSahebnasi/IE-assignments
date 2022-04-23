@@ -71,7 +71,7 @@ const Input = props => {
       <label>{props.label}</label>
       <input onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}/>
       <p>{errorMessage}</p>
-      <p>{state}</p>
+      {/* <p>{state}</p> */}
     </div>
   )
 };
