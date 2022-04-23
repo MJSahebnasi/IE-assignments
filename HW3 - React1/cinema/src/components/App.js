@@ -37,23 +37,15 @@ export default function App() {
         setMovies(dataObj);
     }
 
-    // const containerStyle = {
-    //     display: 'inline',
-    //     background-color: 'red'
-    // };
-
     return (
-        <div>
+        <div className='card-list'>
             <Router>
-            {movies.map(movie => (
-                    <span key={movie.id}>
-                        <Switch>
-                            <Route path={'/'} exact render={(props) => <MovieCard movie={movie} />} />
-                            <Route path={`/movies/${movie.id}`} exact render={(props) => <MovieDetail id={movie.id} />} />
-                            {/* <Route path={'/movies/:id'} exact render={(props) => <MovieDetail id={movie.id} />} /> */}
-                        </Switch>
-                    </span>
-            ))}
+                {movies.map(movie => (
+                    <Switch>
+                        <Route path={'/'} exact render={(props) => <MovieCard movie={movie} />} />
+                        <Route path={`/movies/${movie.id}`} exact render={(props) => <MovieDetail id={movie.id} />} />
+                    </Switch>
+                ))}
             </Router>
         </div>
     );
