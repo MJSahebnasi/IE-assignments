@@ -14,9 +14,34 @@ class IranMap extends React.Component {
     };
 
 
+    componentDidMount(){
+        // get data
+        let xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", () => {
+            if (xhttp.readyState === 4) {
+                if (xhttp.status === 200) {
+                    // request successful
+                    let data = JSON.parse(xhttp.responseText);
+     
+                    this.setState({
+                        citiesData: data
+                    });          
+                } else {
+                    console.log("error getting data")
+                }
+            }
+        });
+        xhttp.open("GET", "http://localhost:9000/cities/");
+        xhttp.send();
+        
+        // console.log(this.citiesData);
+    }
+
     cityClicked = (id) => (event) => {
         event.preventDefault();
-        // Fetch city details and open modal
+        // Fetch city details
+
+        //open modal
     };
 
     closeModal = () => {
