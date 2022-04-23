@@ -1,26 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import {Component} from 'react';
 import MovieCard from './MovieCard';
 import MovieDetail from './MovieDetail';
-import NotFound from './NotFound';
+// import NotFound from './NotFound';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // I've used some of the techniques of this tutorial:
 // https://www.youtube.com/watch?v=Law7wfdg_ls
-
-// class theGoddamnWraper extends React.Component {
-//     state = {
-//         movies: null
-//     }
-//     render() {
-//         return (
-//             <div className='card-list'>
-//                 <MovieCard movie={}/>
-//             </div>
-//         );
-//     }
-// }
 
 export default function App() {
 
