@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
 import MovieDetail from './MovieDetail';
+import NotFound from './NotFound';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -41,9 +42,10 @@ export default function App() {
         <div className='card-list'>
             <Router>
                 {movies.map(movie => (
-                    <Switch>
+                    <Switch key={movie.id}>
                         <Route path={'/'} exact render={(props) => <MovieCard movie={movie} />} />
                         <Route path={`/movies/${movie.id}`} exact render={(props) => <MovieDetail id={movie.id} />} />
+                        {/* <Route path={'/'} element={NotFound} /> */}
                     </Switch>
                 ))}
             </Router>
