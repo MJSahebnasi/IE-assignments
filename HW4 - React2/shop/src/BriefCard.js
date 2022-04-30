@@ -6,10 +6,19 @@ class BriefCard extends React.Component {
 
         return (
             <div className='BriefCard'>
-                <div>
+                <div className='img_div'>
                     
                 </div>
-                <div>
+                <div className='title_div'>
+                    
+                </div>
+                <div className='price_div'>
+
+                </div>
+                <div className='size_div'>
+
+                </div>
+                <div className='button_div'>
 
                 </div>
             </div>

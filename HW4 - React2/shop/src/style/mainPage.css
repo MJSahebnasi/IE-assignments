@@ -10,11 +10,43 @@
 .BriefCard{
     width: 280px;
     height: 350px;
-    background-color: white;
-    display: flex;
-
     margin: 15px;
 
-    /* border: 2px solid; */
+    background-color: white;
     border-radius: 4px;
+
+    display: grid;
+}
+.BriefCard div{
+    border: 2px solid;
+}
+.img_div{
+    grid-row-start: 1;
+    grid-row-end: 10;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.title_div{
+    grid-row-start: 10;
+    grid-row-end: 12;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.price_div{
+    grid-row-start: 12;
+    grid-row-end: 13;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.size_div{
+    grid-row-start: 12;
+    grid-row-end: 13;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.button_div{
+    grid-row-start: 13;
+    grid-row-end: 15;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
