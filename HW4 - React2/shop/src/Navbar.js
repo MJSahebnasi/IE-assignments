@@ -10,7 +10,7 @@ class Navbar extends React.Component {
                     <span class="menu_button"><h3>All Products</h3></span>
                     <span class="menu_button"><h3>Smartphones</h3></span>
                     <span class="menu_button"><h3>Notebooks</h3></span>
-                    <button type="button" class="cart_button">cart</button>
+                    <button type="button" class="cart_button">Cart</button>
                 </div>
             </div>
         );
