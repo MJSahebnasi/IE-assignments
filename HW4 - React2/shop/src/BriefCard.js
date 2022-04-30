@@ -10,7 +10,7 @@ class BriefCard extends React.Component {
                     
                 </div>
                 <div className='title_div'>
-                    
+
                 </div>
                 <div className='price_div'>
 
@@ -19,7 +19,7 @@ class BriefCard extends React.Component {
 
                 </div>
                 <div className='button_div'>
-
+                    <button type="button" class="add_to_cart_button">Add to Cart</button>
                 </div>
             </div>
         );

@@ -18,7 +18,11 @@
     display: grid;
 }
 .BriefCard div{
-    border: 2px solid;
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .img_div{
     grid-row-start: 1;
@@ -46,7 +50,24 @@
 }
 .button_div{
     grid-row-start: 13;
-    grid-row-end: 15;
+    grid-row-end: 14;
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
+.add_to_cart_button {
+    all: unset;
+    cursor: pointer;
+    color: white;
+    background-color: #27ae60;
+    
+    width: 95%;
+    height: 80%;
+
+    text-align: center;
+    border-radius:4px;
+  }
+  
+  .add_to_cart_button:hover {
+    background-color: #188747;
+  }
