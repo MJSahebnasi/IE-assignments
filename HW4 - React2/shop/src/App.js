@@ -1,21 +1,22 @@
 import './style/navbar.css';
 import './style/app.css';
 import './style/mainPage.css';
-import Navbar from './Navbar';
-import BriefCard from './BriefCard';
-import { useState, useEffect } from 'react';
+// import Navbar from './Navbar';
+// import BriefCard from './BriefCard';
+// import { useState, useEffect } from 'react';
+
+import F from './test';
 
 function App() {
 
-  let [productsData, setProductsData] = useState(JSON.parse('data/data.json'));
-
-  useEffect(() => {
-    setProductsData(JSON.parse('data/data.json'));
-  }, []);
+  // const productsData = require('./data/data.json');
 
   return (
+
+    
     <div className='AppContainer'>
-      <div className="App">
+      <F/>
+      {/* <div className="App">
         <Navbar />
         <div className='briefCard_container'>
           <BriefCard title={productsData.title}/>
@@ -24,7 +25,7 @@ function App() {
           <BriefCard />
           <BriefCard />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
