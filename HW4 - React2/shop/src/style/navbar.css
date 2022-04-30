@@ -24,6 +24,10 @@
   color: white;
 }
 
+.menu_button:first-child{
+  margin-left: 0px;
+}
+
 .cart_button {
   all: unset;
   cursor: pointer;

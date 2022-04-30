@@ -1,3 +1,14 @@
-.AppContainer{
-    background-color:#e6e6e6;
+html {
+    height: 100%;
+    width: 100%;
 }
+body {    
+    height: auto;
+    width: 100%;
+    min-width: 785px;
+
+    background-color:#e6e6e6;
+  }
+/* .AppContainer{
+    
+} */

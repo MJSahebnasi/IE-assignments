@@ -6,7 +6,12 @@ class BriefCard extends React.Component {
 
         return (
             <div className='BriefCard'>
-                
+                <div>
+                    
+                </div>
+                <div>
+
+                </div>
             </div>
         );
     }
