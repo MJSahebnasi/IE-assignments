@@ -15,19 +15,20 @@ function App() {
   if (!data)  
     return <p>loading ...</p>
   else
-    console.log(data);
-    console.log(data.data[0]);
+    // console.log(data);
+    // console.log(data.data.length);
+
+    var cards = [];
+    for (var i = 0; i < data.data.length; i++) {
+      cards.push(<BriefCard key={i} title={data.data[i].title} img_url={data.data[i].img} price={data.data[i].price} size={data.data[i].size}/>);
+    }
 
     return (
       <div className='AppContainer'>
         <div className="App">
           <Navbar />
           <div className='briefCard_container'>
-            <BriefCard title={data.data[0].title} img_url={data.data[0].img} price={data.data[0].price} size={data.data[0].size}/>
-            <BriefCard />
-            <BriefCard />
-            <BriefCard />
-            <BriefCard />
+            {cards}
           </div>
         </div>
       </div>
