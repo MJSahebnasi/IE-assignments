@@ -1,33 +1,37 @@
 import './style/navbar.css';
 import './style/app.css';
 import './style/mainPage.css';
-// import Navbar from './Navbar';
-// import BriefCard from './BriefCard';
-// import { useState, useEffect } from 'react';
-
-import F from './test';
+import Navbar from './Navbar';
+import BriefCard from './BriefCard';
+import { useState, useEffect } from 'react';
 
 function App() {
 
-  // const productsData = require('./data/data.json');
+  const [data, setData] = useState();
+    useEffect(() => {
+        setData(require('./data/data.json'));
+    }, []);
 
-  return (
+  if (!data)  
+    return <p>loading ...</p>
+  else
+    console.log(data);
+    console.log(data.data[0]);
 
-    
-    <div className='AppContainer'>
-      <F/>
-      {/* <div className="App">
-        <Navbar />
-        <div className='briefCard_container'>
-          <BriefCard title={productsData.title}/>
-          <BriefCard />
-          <BriefCard />
-          <BriefCard />
-          <BriefCard />
+    return (
+      <div className='AppContainer'>
+        <div className="App">
+          <Navbar />
+          <div className='briefCard_container'>
+            <BriefCard title={data.data[0].title} img_url={data.data[0].img} price={data.data[0].price} size={data.data[0].size}/>
+            <BriefCard />
+            <BriefCard />
+            <BriefCard />
+            <BriefCard />
+          </div>
         </div>
-      </div> */}
-    </div>
-  );
+      </div>
+    );
 }
 
 export default App;

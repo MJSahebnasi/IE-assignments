@@ -37,14 +37,14 @@ function F() {
     // console.log(data);
     // console.log(typeof data);
 
-    if (!data) {
-        return <p>Loading...</p>;
-    }
+    // if (!data) {
+    //     return <p>Loading...</p>;
+    // }
 
-    return (
-        <div>{data.id}</div>
-        // <div>a</div>
-    );
+    // return (
+    //     <div>{data.id}</div>
+    //     // <div>a</div>
+    // );
 }
 
 export default F;
