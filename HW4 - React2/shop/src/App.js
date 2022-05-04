@@ -1,10 +1,13 @@
+import { useState, useEffect } from 'react';
+
 import './style/navbar.css';
 import './style/app.css';
 import './style/mainPage.css';
+import './style/detailesPage.css'
+
 import Navbar from './Navbar';
-import BriefCard from './BriefCard';
-import { useState, useEffect } from 'react';
 import BriefCardContainer from './BriefCardContainer';
+import DetailedCard from './DetailedCard';
 
 function App() {
 
@@ -15,14 +18,15 @@ function App() {
 
   if (!cardsData)
     return <p>loading ...</p>
-  // console.log(data);
+  // console.log(cardsData[0]);
   // console.log(data.data.length);
 
   return (
     <div className='AppContainer'>
       <div className="App">
         <Navbar />
-        <BriefCardContainer cardsData={cardsData} />
+        {/* <BriefCardContainer cardsData={cardsData} /> */}
+        <DetailedCard cardData={cardsData[10]} />
       </div>
     </div>
   );
