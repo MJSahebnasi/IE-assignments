@@ -26,8 +26,8 @@ class DetailedCard extends React.Component {
                         {`R$ ${this.props.cardData.price}.00`}
                     </div>
                     <div id='button_div_detailPage'>
-                        <button type="button" class="base_button_detailPage buy_now_button">Buy Now</button>
-                        <button type="button" class="base_button_detailPage more_info_button" onClick={() => this.setState({ modalOpen: true })}>More Info</button>
+                        <button type="button" className="base_button_detailPage buy_now_button">Buy Now</button>
+                        <button type="button" className="base_button_detailPage more_info_button" onClick={() => this.setState({ modalOpen: true })}>More Info</button>
                     </div>
                     <div id='detailPage_placeholder'></div>
                 </div>

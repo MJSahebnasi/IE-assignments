@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 
 import './style/navbar.css';
 import './style/app.css';
@@ -25,8 +26,8 @@ function App() {
     <div className='AppContainer'>
       <div className="App">
         <Navbar />
-        {/* <BriefCardContainer cardsData={cardsData} /> */}
-        <DetailedCard cardData={cardsData[10]} />
+        <BriefCardContainer cardsData={cardsData} />
+        {/* <DetailedCard cardData={cardsData[10]} /> */}
       </div>
     </div>
   );

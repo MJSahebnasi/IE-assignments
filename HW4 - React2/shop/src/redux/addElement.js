@@ -1,1 +1,0 @@
-const add_element = {type: 'ADD_ELEMENT'}
