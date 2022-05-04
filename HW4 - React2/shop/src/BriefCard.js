@@ -6,19 +6,19 @@ class BriefCard extends React.Component {
 
         return (
             <div className='BriefCard'>
-                <div className='img_div flex_horiz_centerd'>
+                <div className='img_div_mainPage flex_horiz_centerd'>
                     <img src={this.props.img_url} alt={"cannot load"}/>
                 </div>
-                <div className='title_div'>
+                <div className='title_div_mainPage'>
                     {this.props.title}
                 </div>
-                <div className='price_div'>
+                <div className='price_div_mainPage'>
                     {`R$ ${this.props.price}.00`}
                 </div>
-                <div className='size_div'>
+                <div className='size_div_mainPage'>
                     {this.props.size}
                 </div>
-                <div className='button_div flex_horiz_centerd'>
+                <div className='button_div_mainPage flex_horiz_centerd'>
                     <button type="button" className="add_to_cart_button">Add to Cart</button>
                 </div>
             </div>
