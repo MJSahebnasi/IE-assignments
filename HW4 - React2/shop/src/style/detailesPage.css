@@ -84,28 +84,58 @@
     /* align-items: center; */
 }
 
-.base_button{
+.base_button_detailPage{
     all: unset;
     cursor: pointer;
     color: white;
-
-    margin-top: 5px;
-
-    width: 500px;
-    height: 40%;
 
     text-align: center;
     border-radius: 4px;
 }
 .buy_now_button{
+    margin-top: 5px;
+
+    width: 500px;
+    height: 40%;
+
     background-color: #27ae60;
 }
 .buy_now_button:hover{
     background-color: #188747;
 }
 .more_info_button{
+    margin-top: 5px;
+
+    width: 500px;
+    height: 40%;
+
     background-color: #2d9cdb;
 }
 .more_info_button:hover{
     background-color: #217aac;
+}
+
+#modal_close{
+    position: absolute;
+    bottom: 10px;
+    left:10px;
+    right:10px;
+
+    text-align: right;
+
+    /* border: 2px solid; */
+}
+#modal_close button{ 
+    background-color: rgb(227, 26, 26);
+    width: 60px;
+    height: 25px;
+}
+#modal_close button:hover{ 
+    background-color: rgb(177, 17, 17);
+}
+
+#modal{
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
 }
