@@ -4,35 +4,28 @@ import './style/mainPage.css';
 import Navbar from './Navbar';
 import BriefCard from './BriefCard';
 import { useState, useEffect } from 'react';
+import BriefCardContainer from './BriefCardContainer';
 
 function App() {
 
   const [cardsData, setData] = useState();
-    useEffect(() => {
-        setData(require('./data/data.json').data);
-    }, []);
+  useEffect(() => {
+    setData(require('./data/data.json').data);
+  }, []);
 
-  if (!cardsData)  
+  if (!cardsData)
     return <p>loading ...</p>
-  else
-    // console.log(data);
-    // console.log(data.data.length);
+  // console.log(data);
+  // console.log(data.data.length);
 
-    var cards = [];
-    for (var i = 0; i < cardsData.length; i++) {
-      cards.push(<BriefCard key={i} title={cardsData[i].title} img_url={cardsData[i].img} price={cardsData[i].price} size={cardsData[i].size}/>);
-    }
-
-    return (
-      <div className='AppContainer'>
-        <div className="App">
-          <Navbar />
-          <div className='briefCard_container'>
-            {cards}
-          </div>
-        </div>
+  return (
+    <div className='AppContainer'>
+      <div className="App">
+        <Navbar />
+        <BriefCardContainer cardsData={cardsData} />
       </div>
-    );
+    </div>
+  );
 }
 
 export default App;
