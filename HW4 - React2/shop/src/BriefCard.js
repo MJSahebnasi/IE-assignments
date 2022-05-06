@@ -1,11 +1,9 @@
 import React from 'react';
-import { useDispatch } from "react-redux";
 import { add_item, remove_item } from "./redux/cart.js";
 import { store } from 'index.js';
 
 function BriefCard(props) {
 
-    // const dispatch = useDispatch();
     const add_sidpatch = () => {
         store.dispatch(add_item(props.cardData));
     }
