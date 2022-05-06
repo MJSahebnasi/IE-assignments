@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import React from 'react';
 
-
 import './style/navbar.css';
 import './style/app.css';
 import './style/mainPage.css';
@@ -13,6 +12,10 @@ import BriefCardContainer from './BriefCardContainer';
 import DetailedCard from './DetailedCard';
 
 function App() {
+
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
+  console.log(typeof cart);
 
   const [cardsData, setData] = useState();
   useEffect(() => {
@@ -26,7 +29,8 @@ function App() {
     <div className='AppContainer'>
       <div className="App">
         <Navbar />
-        {/* <BriefCardContainer cardsData={cardsData} /> */}
+        {/* <div>{cart}</div> */}
+        <BriefCardContainer cardsData={cardsData} />
         {/* <DetailedCard cardData={cardsData[10]} /> */}
       </div>
     </div>

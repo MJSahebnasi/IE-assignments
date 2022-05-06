@@ -1,12 +1,13 @@
 import React from 'react';
-// import { add_item, remove_item } from "./redux/cart.js";
-// import { store } from 'index.js';
+import { useDispatch } from "react-redux";
+import { add_item, remove_item } from "./redux/cart.js";
 
 function BriefCard(props) {
 
-    // const add_sidpatch = () => {
+    // const add_dispatch = () => {
     //     store.dispatch(add_item(props.cardData));
     // }
+    const add_dispatch = useDispatch();
 
     return (
         <div className='BriefCard'>
@@ -24,7 +25,7 @@ function BriefCard(props) {
             </div>
             <div className='button_div_mainPage flex_horiz_centerd'>
                 <button
-                    // onClick={() => { dispatch(add_item(props.cardData)); }}
+                    onClick={() => { add_dispatch(add_item(props.cardData)); }}
                     type="button" className="add_to_cart_button">Add to Cart
                 </button>
             </div>
