@@ -5,18 +5,18 @@ class BriefCardContainer extends React.Component {
 
     render() {
 
-        const cards = [];
+        const cardComponents = [];
         const cardsData = this.props.cardsData;
 
         // TODO: keep cardData, remove the rest props:
 
         for (var i = 0; i < cardsData.length; i++) {
-            cards.push(<BriefCard cardData={cardsData[i]} key={i} title={cardsData[i].title} img_url={cardsData[i].img} price={cardsData[i].price} size={cardsData[i].size} />);
+            cardComponents.push(<BriefCard cardData={cardsData[i]} key={i} />);
         }
 
         return (
             <div className='briefCard_container'>
-                {cards}
+                {cardComponents}
             </div>
         );
     };

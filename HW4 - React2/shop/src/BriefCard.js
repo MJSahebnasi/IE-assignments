@@ -9,16 +9,16 @@ function BriefCard(props) {
     return (
         <div className='BriefCard'>
             <div className='img_div_mainPage flex_horiz_centerd'>
-                <img src={props.img_url} alt={"cannot load"} />
+                <img src={props.cardData.img} alt={"cannot load"} />
             </div>
             <div className='title_div_mainPage'>
-                {props.title}
+                {props.cardData.title}
             </div>
             <div className='price_div_mainPage'>
-                {`R$ ${props.price}.00`}
+                {`R$ ${props.cardData.price}.00`}
             </div>
             <div className='size_div_mainPage'>
-                {props.size}
+                {props.cardData.size}
             </div>
             <div className='button_div_mainPage flex_horiz_centerd'>
                 <button
