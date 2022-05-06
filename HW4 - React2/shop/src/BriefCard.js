@@ -4,9 +4,6 @@ import { add_item, remove_item } from "./redux/cart.js";
 
 function BriefCard(props) {
 
-    // const add_dispatch = () => {
-    //     store.dispatch(add_item(props.cardData));
-    // }
     const add_dispatch = useDispatch();
 
     return (

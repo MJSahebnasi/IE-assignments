@@ -13,9 +13,9 @@ import DetailedCard from './DetailedCard';
 
 function App() {
 
-  const cart = useSelector((state) => state.cart);
-  console.log(cart);
-  console.log(typeof cart);
+  // const cartItems = useSelector((state) => state.cart);
+  // console.log(cartItems);
+  // console.log(typeof cartItems);
 
   const [cardsData, setData] = useState();
   useEffect(() => {
@@ -29,7 +29,6 @@ function App() {
     <div className='AppContainer'>
       <div className="App">
         <Navbar />
-        {/* <div>{cart}</div> */}
         <BriefCardContainer cardsData={cardsData} />
         {/* <DetailedCard cardData={cardsData[10]} /> */}
       </div>

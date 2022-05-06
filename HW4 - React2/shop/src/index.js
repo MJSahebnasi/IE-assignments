@@ -12,7 +12,7 @@ import cartReducer from './redux/cart.js';
 const store = configureStore({
   reducer: {
     cart: cartReducer
-  }
+  },
 });
 
 export const root = ReactDOM.createRoot(document.getElementById('root'));
