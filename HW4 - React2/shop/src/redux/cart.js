@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
         },
 
         remove_item: (state = {}, action) => {
-            let index = state.items.indexOf(action.payload);
+            const index = action.payload;
             if (index > -1) {
                 state.items.splice(index, 1);
             }

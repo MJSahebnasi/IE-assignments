@@ -8,7 +8,7 @@ import { remove_item } from "./redux/cart.js";
 
 function CartCard(props) {
 
-    const add_dispatch = useDispatch();
+    const remove_dispatch = useDispatch();
     const cartData = useSelector((state) => state.cart.items);
     const cardData = cartData[props.index];
 
@@ -23,7 +23,9 @@ function CartCard(props) {
             </div>
 
             <div className='remove_div'>
-                <button>X</button>
+                <button 
+                    onClick={() => { remove_dispatch(remove_item(props.index)); }}
+                    type='button'>X</button>
             </div>
         </div>
     );
