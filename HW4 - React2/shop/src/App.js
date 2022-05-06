@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './style/navbar.css';
 import './style/app.css';
@@ -17,24 +18,27 @@ import CartCardContainer from './CartCardContainer';
 function App() {
 
   const cartItems = useSelector((state) => state.cart.items);
-  // console.log(cartItems);
-  // console.log(typeof cartItems);
 
-  const [cardsData, setData] = useState();
+  const [allCardsData, setAllCardsData] = useState();
   useEffect(() => {
-    setData(require('./data/data.json').data);
+    setAllCardsData(require('./data/data.json').data);
   }, []);
 
-  if (!cardsData)
+  if (!allCardsData)
     return <p>loading ...</p>
-  
+
   return (
     <div className='AppContainer'>
       <div className="App">
         <Navbar />
-        <BriefCardContainer cardsData={cardsData} />
         {/* <DetailedCard cardData={cardsData[10]} /> */}
-        <CartCardContainer/>
+        <Router>
+           <Routes>
+             <Route path="/" element={<BriefCardContainer cardsData={allCardsData} />} />
+             <Route path="/cart" element={<CartCardContainer />} />
+             {/* <CartCardContainer /> */}
+           </Routes>
+        </Router>
       </div>
     </div>
   );
