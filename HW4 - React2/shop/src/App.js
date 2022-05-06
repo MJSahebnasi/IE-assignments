@@ -6,16 +6,19 @@ import './style/navbar.css';
 import './style/app.css';
 import './style/mainPage.css';
 import './style/detailesPage.css'
+import './style/cartPage.css'
 
 import Navbar from './Navbar';
 import BriefCardContainer from './BriefCardContainer';
 import DetailedCard from './DetailedCard';
+import CartCard from './CartCard';
+import CartCardContainer from './CartCardContainer';
 
 function App() {
 
-  const cartItems = useSelector((state) => state.cart);
-  console.log(cartItems);
-  console.log(typeof cartItems);
+  const cartItems = useSelector((state) => state.cart.items);
+  // console.log(cartItems);
+  // console.log(typeof cartItems);
 
   const [cardsData, setData] = useState();
   useEffect(() => {
@@ -31,6 +34,7 @@ function App() {
         <Navbar />
         <BriefCardContainer cardsData={cardsData} />
         {/* <DetailedCard cardData={cardsData[10]} /> */}
+        <CartCardContainer/>
       </div>
     </div>
   );
