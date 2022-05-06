@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateValue = { items: [] };
+// do NOT use initial state like this: (extra wrapper)
+// const initialStateValue = { items: [] };
 
 export const cartSlice = createSlice({
     name: "cart",
