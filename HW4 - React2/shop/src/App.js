@@ -13,9 +13,9 @@ import DetailedCard from './DetailedCard';
 
 function App() {
 
-  // const cartItems = useSelector((state) => state.cart);
-  // console.log(cartItems);
-  // console.log(typeof cartItems);
+  const cartItems = useSelector((state) => state.cart);
+  console.log(cartItems);
+  console.log(typeof cartItems);
 
   const [cardsData, setData] = useState();
   useEffect(() => {

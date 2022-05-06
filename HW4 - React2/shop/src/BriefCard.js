@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { add_item, remove_item } from "./redux/cart.js";
+import { add_item } from "./redux/cart.js";
 
 function BriefCard(props) {
 
