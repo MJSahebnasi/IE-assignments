@@ -1,0 +1,46 @@
+.navbar {
+  width: 100%;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background-color: #333333;
+}
+
+.container {
+  /* background-color: red; */
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.menu_button {
+  /* background-color: green; */
+  cursor: pointer;
+  margin-left: 40px;
+  color: white;
+}
+
+.menu_button:first-child{
+  margin-left: 0px;
+}
+
+.cart_button {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  background-color: #03cafc;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 280px;
+  width: 100px;
+  text-align: center;
+  border-radius:8px;
+}
+
+.cart_button:hover {
+  background-color: #00aeff;
+}
