@@ -42,6 +42,30 @@
     border: 1px solid;
 } */
 
+#review_div{
+    margin-top: 10px;
+    /* padding-left: 30px; */
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+#review_div div{
+    all: unset;
+    background-color: white;
+    margin-left: 15px;
+    text-align: center;
+    line-height: 40px;
+}
+.starImage{
+    height: 40px;
+}
+.notFilled{
+    filter: grayscale(100%);
+}
+.notFilled:hover{
+    filter: grayscale(0%);
+}
 .title_div_detailPage {
     grid-column-start: 3;
     grid-column-end: 4;
@@ -133,7 +157,6 @@
 #modal_close button:hover{ 
     background-color: rgb(177, 17, 17);
 }
-
 #modal{
     width: 700px;
     height: 300px;

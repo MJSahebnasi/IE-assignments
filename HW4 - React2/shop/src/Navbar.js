@@ -6,7 +6,7 @@ function Navbar() {
 
     const cartItems = useSelector((state) => state.cart.items);
 
-    if (cartItems.length == 0) {
+    if (cartItems.length === 0) {
         return (
             <div className="navbar">
                 <div className="container">
