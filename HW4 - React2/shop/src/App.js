@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import './style/navbar.css';
 import './style/app.css';
@@ -30,14 +30,15 @@ function App() {
   return (
     <div className='AppContainer'>
       <div className="App">
-        <Navbar />
-        {/* <DetailedCard cardData={cardsData[10]} /> */}
         <Router>
-           <Routes>
-             <Route path="/" element={<BriefCardContainer cardsData={allCardsData} />} />
-             <Route path="/cart" element={<CartCardContainer />} />
-             {/* <CartCardContainer /> */}
-           </Routes>
+          <Navbar />
+          {/* <Router><Link to={"/cart"}>Cart</Link></Router> */}
+          {/* <DetailedCard cardData={cardsData[10]} /> */}
+          <Routes>
+            <Route path="/" element={<BriefCardContainer cardsData={allCardsData} />} />
+            <Route path="/cart" element={<CartCardContainer />} />
+            {/* <CartCardContainer /> */}
+          </Routes>
         </Router>
       </div>
     </div>
