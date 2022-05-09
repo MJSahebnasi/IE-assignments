@@ -20,11 +20,11 @@ function DetailedCard(props) {
                     <img src={props.cardData.img} alt={"cannot load"} />
                 </div>
                 <div id='review_div'>
-                    <img className='starImage' src='star.png' alt={"oops"}></img>
-                    <img className='starImage notFilled' src='star.png' alt={"oops"}></img>
-                    <img className='starImage notFilled' src='star.png' alt={"oops"}></img>
-                    <img className='starImage notFilled' src='star.png' alt={"oops"}></img>
-                    <img className='starImage notFilled' src='star.png' alt={"oops"}></img>
+                    <img className='starImage' src='star.jpg' alt={"oops"}></img>
+                    <img className='starImage notFilled' src='star.jpg' alt={"oops"}></img>
+                    <img className='starImage notFilled' src='star.jpg' alt={"oops"}></img>
+                    <img className='starImage notFilled' src='star.jpg' alt={"oops"}></img>
+                    <img className='starImage notFilled' src='star.jpg' alt={"oops"}></img>
 
                     <div>2 reviews</div>
                 </div>

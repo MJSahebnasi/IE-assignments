@@ -56,9 +56,12 @@
     margin-left: 15px;
     text-align: center;
     line-height: 40px;
+    /* border: 1px solid; */
 }
 .starImage{
     height: 40px;
+    cursor: pointer;
+    /* border: 1px solid; */
 }
 .notFilled{
     filter: grayscale(100%);
