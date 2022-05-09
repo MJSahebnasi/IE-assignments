@@ -71,3 +71,22 @@
     padding-right: 5%;
     text-align: right;
 }
+
+#checkout_div{
+    position: relative;
+    right: 41%;
+    /* border: 1px solid;   */
+}
+#checkout_button{
+    all: unset;
+    cursor: pointer;
+    color: white;
+    background-color: #03a5fc;
+    width: 100px;
+    text-align: center;
+    border-radius:5px;
+    height: 40px;
+}
+#checkout_button:hover{
+    background-color: #0192e1;
+}

@@ -20,6 +20,9 @@ function CartCardContainer() {
                 <div id='total_div'>
                     <h2>total: R$ {priceSum}.00</h2>
                 </div>
+                <div id='checkout_div'>
+                    <button id='checkout_button'>checkout</button>
+                </div>
             </div>
         );
     }
