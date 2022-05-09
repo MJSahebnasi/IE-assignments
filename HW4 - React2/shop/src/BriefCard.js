@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function BriefCard(props) {
 
-    const add_dispatch = useDispatch();
+    const my_dispatch = useDispatch();
 
     return (
         <div className='BriefCard'>
@@ -25,7 +25,7 @@ function BriefCard(props) {
             </div>
             <div className='button_div_mainPage flex_horiz_centerd'>
                 <button
-                    onClick={() => { add_dispatch(add_item(props.cardData)); }}
+                    onClick={() => { my_dispatch(add_item(props.cardData)); }}
                     type="button" className="add_to_cart_button">Add to Cart
                 </button>
             </div>

@@ -14,12 +14,17 @@ export const cartSlice = createSlice({
         remove_item: (state = {}, action) => {
             const index = action.payload;
             if (index > -1) {
+                // remove element with index
                 state.items.splice(index, 1);
             }
         },
+
+        checkout: (state={}) => {
+            state.items = [];
+        }
     },
 });
 
-export const { add_item, remove_item } = cartSlice.actions;
+export const { add_item, remove_item, checkout } = cartSlice.actions;
 
 export default cartSlice.reducer;
