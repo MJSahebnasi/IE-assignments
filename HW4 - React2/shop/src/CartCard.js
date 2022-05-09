@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { remove_item } from "./redux/cart.js";
 
 
-
 function CartCard(props) {
 
     const remove_dispatch = useDispatch();
@@ -23,7 +22,7 @@ function CartCard(props) {
             </div>
 
             <div className='remove_div'>
-                <button 
+                <button
                     onClick={() => { remove_dispatch(remove_item(props.index)); }}
                     type='button'>X</button>
             </div>

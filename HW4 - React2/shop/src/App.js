@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './style/navbar.css';
 import './style/app.css';
@@ -12,32 +12,45 @@ import './style/cartPage.css'
 import Navbar from './Navbar';
 import BriefCardContainer from './BriefCardContainer';
 import DetailedCard from './DetailedCard';
-import CartCard from './CartCard';
 import CartCardContainer from './CartCardContainer';
 
 function App() {
 
-  const cartItems = useSelector((state) => state.cart.items);
-
-  const [allCardsData, setAllCardsData] = useState();
+  const [allProductsData, setAllProductsData] = useState();
   useEffect(() => {
-    setAllCardsData(require('./data/data.json').data);
+    setAllProductsData(require('./data/data.json').data);
   }, []);
 
-  if (!allCardsData)
+  if (!allProductsData)
     return <p>loading ...</p>
+
+  const smartphonesData = allProductsData.filter(data => data.category==="smartphone");
+  const notebooksData = allProductsData.filter(data => data.category==="notebook");
+  
+  // console.log('allProductsData', allProductsData);
+  // console.log('smartphonesData', smartphonesData);
+  // console.log('notebooksData', notebooksData);
 
   return (
     <div className='AppContainer'>
       <div className="App">
         <Router>
           <Navbar />
-          {/* <Router><Link to={"/cart"}>Cart</Link></Router> */}
-          {/* <DetailedCard cardData={cardsData[10]} /> */}
           <Routes>
-            <Route path="/" element={<BriefCardContainer cardsData={allCardsData} />} />
+            <Route path="/" element={<BriefCardContainer cardsData={allProductsData} />} />
             <Route path="/cart" element={<CartCardContainer />} />
-            {/* <CartCardContainer /> */}
+            <Route path="/Smartphones" element={<BriefCardContainer cardsData={smartphonesData} />} />
+            <Route path="/Notebooks" element={<BriefCardContainer cardsData={notebooksData} />} />
+            {
+              smartphonesData.map(phone => (
+                <Route key={phone.id} path={`/${phone.id}`} element={<DetailedCard cardData={phone} />} />
+              ))
+            }
+            {
+              notebooksData.map(notebook => (
+                <Route key={notebook.id} path={`/${notebook.id}`} element={<DetailedCard cardData={notebook} />} />
+              ))
+            }
           </Routes>
         </Router>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { add_item } from "./redux/cart.js";
+import { Link } from 'react-router-dom';
+
 
 function BriefCard(props) {
 
@@ -8,11 +10,12 @@ function BriefCard(props) {
 
     return (
         <div className='BriefCard'>
+
             <div className='img_div_mainPage flex_horiz_centerd'>
                 <img src={props.cardData.img} alt={"cannot load"} />
             </div>
             <div className='title_div_mainPage'>
-                {props.cardData.title}
+                <Link style={{ all: "unset", cursor: "pointer" }} to={`/${props.cardData.id}`}>{props.cardData.title} </Link>
             </div>
             <div className='price_div_mainPage'>
                 {`R$ ${props.cardData.price}.00`}
