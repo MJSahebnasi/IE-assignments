@@ -1,8 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useState } from 'react';
-
 import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+
 import { add_item } from "./redux/cart.js";
 
 
@@ -25,9 +26,11 @@ function DetailedCard(props) {
                     {`R$ ${props.cardData.price}.00`}
                 </div>
                 <div id='button_div_detailPage'>
-                    <button
-                        onClick={() => { add_dispatch(add_item(props.cardData)); }}
-                        type="button" className="base_button_detailPage buy_now_button">Buy Now</button>
+                    <Link style={{ all: "unset", width: "500px" }} to={"/cart"}>
+                        <button
+                            onClick={() => { add_dispatch(add_item(props.cardData)); }}
+                            type="button" className="base_button_detailPage buy_now_button">Buy Now</button>
+                    </Link>
                     <button type="button" className="base_button_detailPage more_info_button" onClick={() => setModalOpen(true)}>More Info</button>
                 </div>
                 <div id='detailPage_placeholder'></div>
