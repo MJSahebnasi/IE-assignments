@@ -23,9 +23,9 @@ function App() {
   if (!allProductsData)
     return <p>loading ...</p>
 
-  const smartphonesData = allProductsData.filter(data => data.category==="smartphone");
-  const notebooksData = allProductsData.filter(data => data.category==="notebook");
-  
+  const smartphonesData = allProductsData.filter(data => data.category === "smartphone");
+  const notebooksData = allProductsData.filter(data => data.category === "notebook");
+
   // console.log('allProductsData', allProductsData);
   // console.log('smartphonesData', smartphonesData);
   // console.log('notebooksData', notebooksData);
@@ -34,7 +34,7 @@ function App() {
     <div className='AppContainer'>
       <div className="App">
         <Router>
-          <Navbar />
+          <Navbar/>
           <Routes>
             <Route path="/" element={<BriefCardContainer cardsData={allProductsData} />} />
             <Route path="/cart" element={<CartCardContainer />} />
