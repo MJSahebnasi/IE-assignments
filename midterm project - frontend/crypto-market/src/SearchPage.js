@@ -19,7 +19,7 @@ function SearchPage(props) {
                 <div id='searchPage_body_inner_title'><h1> Cryptocurrency Prices by Market Cap </h1></div>
                 <div id='search_bar_div'>
                     <form>
-                        <input type={'text'} id='search_bar' placeholder='search for a cryptocurrency by name or symbol ...'></input>
+                        <input type={'text'} id='search_bar' placeholder='search for one or multiple cryptocurrencies by name, e.g: bitcoin, cardano'></input>
                     </form>
                 </div>
                 <div id='search_results'>
