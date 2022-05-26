@@ -17,12 +17,13 @@ html {
 
 body{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-.App{
-    /* background-color: green; */
-}
+/* .App{
+    width: 100%;
+    height: 100%;
+} */
 
 .yellow_text{
     color: var(--yellow)
