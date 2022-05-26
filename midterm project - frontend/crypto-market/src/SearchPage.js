@@ -24,7 +24,7 @@ function SearchPage(props) {
                         <input type={'text'} id='search_bar' placeholder='search for one or multiple cryptocurrencies by name, e.g: bitcoin, cardano'></input>
                     </form>
                 </div>
-                <div id='search_results'>
+                {/* <div id='search_results'>
                     <div id='search_results_header' className='search_results_row'>
                         <span id='searchpage_coin_span'>Coin</span>
                         <span>Price</span>
@@ -35,7 +35,7 @@ function SearchPage(props) {
                     <SearchResultItem />
                     <SearchResultItem />
 
-                </div>
+                </div> */}
             </div>
 
         </div>

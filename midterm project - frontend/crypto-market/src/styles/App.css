@@ -10,20 +10,9 @@
     padding: 0px;
 }
 
-html {
-    height: 100%;
-    width: 100%;
+html, body, #root, .App, .CoinDetailPage, #SearchPage {
+    height: 100% !important;
 }
-
-body{
-    width: 100%;
-    height: 100%;
-}
-
-/* .App{
-    width: 100%;
-    height: 100%;
-} */
 
 .yellow_text{
     color: var(--yellow)
