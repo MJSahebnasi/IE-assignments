@@ -75,14 +75,31 @@
 .search_results_row{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
+.search_results_row span{
+    /* border: 1px solid; */
+    width: 20%;
+    text-align: right;
+}
+#searchpage_coin_span{
+    margin-right: 20%;
+    text-align: left;
+    width: 20%;
+
+    height: 100%;
+}
+
 #search_results_header{
     margin-top: 0px !important;
 
     padding: 5px;
+    
+    font-size: 20px;
+
     background-color: var(--yellow);
+    color: black;
 }
-#searchpage_coin_span{
-    margin-right: 150px;
+
+.SearchResultItem{
+    padding: 5px;
 }

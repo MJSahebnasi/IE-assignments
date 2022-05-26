@@ -1,5 +1,7 @@
 import React from 'react';
+
 import MutualHeader from './MutualHeader';
+import SearchResultItem from './SearchResultItem';
 
 function SearchPage(props) {
 
@@ -29,6 +31,10 @@ function SearchPage(props) {
                         <span>24h Change</span>
                         <span>Market Cap</span>
                     </div>
+
+                    <SearchResultItem />
+                    <SearchResultItem />
+
                 </div>
             </div>
 
