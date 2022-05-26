@@ -4,6 +4,25 @@
     --yellow: #fc9513;
 }
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    width: 100%;
+    height: auto;
+}
+
+.App{
+    /* background-color: green; */
+}
+
 .yellow_text{
     color: var(--yellow)
 }

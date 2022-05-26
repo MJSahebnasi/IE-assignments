@@ -1,0 +1,32 @@
+/* this is the header in SearchPage and CoinDetialPage */
+.mutual_header{
+    border: 1px solid;
+
+    height: 60px;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+#button_span{
+    margin-right: 150px;
+    height: 100%;
+    background-color: red;
+
+    /* padding-top: 10px; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#button_span button{
+    /* all: unset; */
+}
+
+#text_span{
+    margin-left: 150px;
+    height: 100%;
+    background-color: red;
+    line-height: 60px;
+}
