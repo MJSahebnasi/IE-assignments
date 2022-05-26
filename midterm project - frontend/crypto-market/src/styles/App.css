@@ -1,0 +1,9 @@
+:root {
+    --blue: rgb(67, 140, 223);
+    --black: rgb(0, 0, 0);
+    --yellow: #fc9513;
+}
+
+.yellow_text{
+    color: var(--yellow)
+}
