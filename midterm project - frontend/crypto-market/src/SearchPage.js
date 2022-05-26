@@ -8,6 +8,8 @@ function SearchPage(props) {
 
             <MutualHeader />
 
+            
+
         </div>
     );
 
