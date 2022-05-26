@@ -1,0 +1,38 @@
+#MainPage{
+    /* border: 1px solid; */
+}
+
+#MainPage div{
+    border: 1px solid;
+}
+
+#MainPage_header{
+
+}
+
+#MainPage_body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.MainPage_body_part{
+    width: 45%;
+    /* height: 70%; */
+
+    min-width: 500px;
+    
+    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#MainPage_left{
+    border: 1px solid;
+}
+
+#MainPage_right{
+    border: 1px solid;
+}
