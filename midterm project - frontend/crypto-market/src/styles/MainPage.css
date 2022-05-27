@@ -1,14 +1,18 @@
 #MainPage{
-    /* border: 1px solid; */
-    /* color: white; */
+    color: white;
+    /* background-color: green; */
+    height: 100%;
+    
+    background-image: url("../../public/background_dark.png");
+    background-size: cover;
 }
 
 #MainPage div{
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 #MainPage_header{
-
+    height: 60px;
 }
 
 #MainPage_body{
@@ -17,44 +21,59 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    margin-top: 40px;
 }
 
 .MainPage_body_part{
-    width: 45%;
+    width: 40%;
     height: 400px;
 
     min-width: 500px;
     
-    margin: 15px;
+    /* margin: 15px; */
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 #MainPage_left{
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 #MainPage_left div{
     margin-left: 10%;
     margin-right: 10%;
 
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #MainPage_right{
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
+/* "Search & Buy Crypto" container: */
 #mainpage_title{
-    font-size: 45px;
+    font-size: 43px;
+    margin-top: 70px !important;
 }
 #mainpage_title h1{
     margin: 0px;
 }
 
+#mainpage_search_div{
+    height: 40px;
+    
+}
 #mainpage_search_button{
     background-color: var(--yellow);
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    color: white;
+}
+#mainpage_search_button:hover{
+    background-color: #b2690f;
 }
 
 #last_searches{

@@ -10,8 +10,8 @@ import CoinDetailPage from './CoinDetailPage';
 function App() {
   return (
     <div className="App">
-      {/* <MainPage /> */}
-      <SearchPage />
+      <MainPage />
+      {/* <SearchPage /> */}
       {/* <CoinDetailPage /> */}
     </div>
   );

@@ -13,7 +13,7 @@ function MainPage(props) {
             <div id='MainPage_body'>
                 <div id='MainPage_left' className='MainPage_body_part'>
                     <div id='mainpage_title'>
-                        <h1>Search & </h1> 
+                        <h1>Search &</h1> 
                         <h1>Buy <span className='yellow_text'>Crypto</span> </h1>
                     </div>
                     <div>
@@ -21,8 +21,8 @@ function MainPage(props) {
                         <br></br>
                         IE Final Project
                     </div>
-                    <div>
-                        <button type='button' id='mainpage_search_button'>SEARCH MORE</button>
+                    <div id='mainpage_search_div'>
+                        <button type="button" id='mainpage_search_button'>SEARCH MORE</button>
                     </div>
                 </div>
                 <div id='MainPage_right' className='MainPage_body_part'>
