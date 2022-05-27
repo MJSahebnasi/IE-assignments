@@ -1,5 +1,5 @@
 /* this is the header in SearchPage and CoinDetialPage */
-.mutual_header{
+#mutual_header_id{
     border: 1px solid;
 
     height: 60px;

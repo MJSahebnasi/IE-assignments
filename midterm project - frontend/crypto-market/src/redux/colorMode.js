@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
     name: "colorMode",
-    initialState: { darkMode: false },
+    initialState: { darkMode: true },
     reducers: {
         changeMode: (state = {}, action) => {
             // return !state.colorMode.darkMode;
