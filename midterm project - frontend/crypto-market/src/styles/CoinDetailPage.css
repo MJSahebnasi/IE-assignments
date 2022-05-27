@@ -1,0 +1,29 @@
+#CoinDetailPage{
+    height: auto;
+    background-color: var(--gray);
+    padding-bottom: 20px;
+}
+#CoinDetailPage_body{
+    color: white;
+    margin-top: 20px;
+
+    /* border: 1px solid; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#CoinDetailPage_body div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#CoinDetailPage_body b{
+    font-size: 60px;
+}
+#description_div{
+    width: 80%;
+    margin-bottom: 20px;
+}

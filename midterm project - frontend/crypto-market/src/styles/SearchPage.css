@@ -106,12 +106,8 @@
 
 .SearchResultItem{
     padding: 5px;
+    cursor: pointer;
 }
-
-#scroll_div{
-    /* position: relative;
-    bottom: 0px; */
-
-    /* height: 0px;
-    width: 10px; */
+.SearchResultItem:hover{
+    font-size: 17px;
 }

@@ -65,6 +65,7 @@ function SearchPage(props) {
             price_change_percentage_24h={searchResults[i].price_change_percentage_24h}
             market_cap={searchResults[i].market_cap}
             symbol={searchResults[i].symbol}
+            coinId={searchResults[i].id}
         />)
     }
 
