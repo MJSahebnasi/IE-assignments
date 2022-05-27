@@ -20,12 +20,9 @@ function SearchPage(props) {
             xhttp.addEventListener("readystatechange", () => {
                 if (xhttp.readyState === 4) {
 
-                    console.log("inside");
-
                     if (xhttp.status === 200) {
                         // request successful
                         let data = JSON.parse(xhttp.responseText);
-
                         setSearchResults(data);
                     } else {
                         // request failed
@@ -40,7 +37,6 @@ function SearchPage(props) {
         else {
             setSearchResults([]);
         }
-        console.log("data: ", searchResults);
     }
 
     // when results are recieved, we scroll to the bottom of the page:

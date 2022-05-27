@@ -15,7 +15,6 @@ function CoinDetailPage(props) {
         const url = "https://api.coingecko.com/api/v3/coins/" + coinId;
 
         // getting data:
-        // we don't want the list of all coins, we ignore empty queries (see api docs):
 
         let xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", () => {
