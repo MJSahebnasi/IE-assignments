@@ -5,10 +5,10 @@ function SearchResultItem(props) {
 
     return (
         <div className='search_results_row SearchResultItem'>
-            <span id='searchpage_coin_span'>Coin</span>
-            <span>1000 $</span>
-            <span>10.3%</span>
-            <span>1000,000 $</span>
+            <span id='searchpage_coin_span'>{props.name}, {props.symbol}</span>
+            <span>$ {props.price}</span>
+            <span>{props.price_change_percentage_24h} %</span>
+            <span>$ {Math.floor(props.market_cap / 1000000)} M</span>
         </div>
     );
 

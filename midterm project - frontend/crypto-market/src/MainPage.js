@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function MainPage(props) {
@@ -22,7 +23,9 @@ function MainPage(props) {
                         IE Final Project
                     </div>
                     <div id='mainpage_search_div'>
-                        <button type="button" id='mainpage_search_button'>SEARCH MORE</button>
+                        <Link to={'/search'}>
+                            <button type="button" id='mainpage_search_button'>SEARCH MORE</button>
+                        </Link>
                     </div>
                 </div>
                 <div id='MainPage_right' className='MainPage_body_part'>
