@@ -7,12 +7,28 @@
     background-size: cover;
 }
 
-#MainPage div{
-    /* border: 1px solid; */
-}
-
+/* the container of the "change theme" button: */
 #MainPage_header{
     height: 60px;
+    padding-top: 15px;
+    padding-right: 30px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    
+    /* border: 1px solid; */
+}
+#change_theme_button{
+    width: 120px;
+    height: 40px;
+
+    border-radius: 20px;
+    border: 1px solid;
+
+    color: white;
+    background-color: transparent;
+
+    cursor: pointer;
 }
 
 #MainPage_body{
@@ -40,20 +56,12 @@
     /* border: 1px solid; */
 }
 
-#MainPage_left{
-    
-}
-
 #MainPage_left div{
     /* margin-left: 10%;
     margin-right: 10%; */
 
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-#MainPage_right{
-
 }
 
 /* "Search & Buy Crypto" container: */

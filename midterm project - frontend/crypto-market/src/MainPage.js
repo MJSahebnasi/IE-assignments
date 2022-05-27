@@ -7,7 +7,7 @@ function MainPage(props) {
         <div id='MainPage'>
 
             <div id='MainPage_header'>
-                change theme
+                <button type='button' id='change_theme_button'>Change Theme</button>
             </div>
 
             <div id='MainPage_body'>
