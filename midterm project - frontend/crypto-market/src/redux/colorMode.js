@@ -8,6 +8,7 @@ export const cartSlice = createSlice({
             // return !state.colorMode.darkMode;
             // return action.payload;
             state.darkMode = action.payload;
+            // return state.darkMode
         },
     },
 });
