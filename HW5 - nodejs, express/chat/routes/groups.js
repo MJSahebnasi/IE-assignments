@@ -18,8 +18,6 @@ router.post("/", authJWT, (req, res) => {
 
     let group = new Group(groups.length, req.body.name, req.body.description, [userId])
 
-    // TODO: find user using id
-    // user.time_added_to_gp = 
     user.rule = 'owner';
     user.group = group.id;
 
