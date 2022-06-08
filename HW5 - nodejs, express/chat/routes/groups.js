@@ -11,13 +11,13 @@ router.post("/", authJWT, (req, res) => {
     let userId = req.userId.userId;
     let user = users.find(u => u.id === userId);
 
-    if (!user || user.group !== null){
+    if (!user || user.group !== null) {
         res.status(400).json(bad_req);
         return
     }
 
     let group = new Group(groups.length, req.body.name, req.body.description, [userId])
-    
+
     // TODO: find user using id
     // user.time_added_to_gp = 
     user.rule = 'owner';
@@ -25,17 +25,32 @@ router.post("/", authJWT, (req, res) => {
 
     groups.unshift(group);
 
-    res.status(200).json({group: {id: group.id.toString()}, message: "successful"});
+    res.status(200).json({ group: { id: group.id.toString() }, message: "successful" });
 
     // log:
     console.log('---groups:', groups);
     // console.log(group.members);
 })
 
-// get groups:
+// get list of groups:
 router.get("/", authJWT, (req, res) => {
-    let result = groups.map(group => { return {id: group.id, name: group.name, description: group.description }})
-    res.status(200).json({groups: result});
+    let result = groups.map(group => { return { id: group.id, name: group.name, description: group.description } })
+    res.status(200).json({ groups: result });
+})
+
+// get list of groups:
+router.get("/my", authJWT, (req, res) => {
+    let userId = req.userId.userId;
+    let user = users.find(u => u.id === userId);
+    if (!user || user.group === null) {
+        res.status(400).json(bad_req);
+        return
+    }
+    let group = groups.find(g => g.id === user.group);
+    let members = group.members.map(userId => users.find(u => u.id === userId))
+        .map(user => { return { id: user.id, name: user.name, email: user.email, rule: user.rule } });
+
+    res.status(200).json({ name: group.name, description: group.description, members: members });
 })
 
 module.exports = router;
