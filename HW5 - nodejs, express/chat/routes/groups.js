@@ -32,4 +32,10 @@ router.post("/", authJWT, (req, res) => {
     // console.log(group.members);
 })
 
+// get groups:
+router.get("/", authJWT, (req, res) => {
+    let result = groups.map(group => { return {id: group.id, name: group.name, description: group.description }})
+    res.status(200).json({groups: result});
+})
+
 module.exports = router;
