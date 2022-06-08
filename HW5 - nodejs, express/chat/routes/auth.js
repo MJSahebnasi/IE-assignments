@@ -11,6 +11,8 @@ router.post("/signup", (req, res) => {
         res.status(200).json(result);
     else
         res.status(400).json(bad_req);
+
+    // log:
     console.log('users', users);
 })
 
