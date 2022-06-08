@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const signup = require('../controller/auth').signup;
+const login = require('../controller/auth').login;
 const users = require('../model/dataBaze').users
 const bad_req = require('./jsonResults').bad_req
 
@@ -10,11 +11,15 @@ router.post("/signup", (req, res) => {
         res.status(200).json(result);
     else
         res.status(400).json(bad_req);
+    console.log('users', users);
 })
 
-// TODO post
-router.get("/login", (req, res) => {
-    res.send('login TODO');
+router.post("/login", (req, res) => {
+    let result = login(req.body.email, req.body.password);
+    if (result)
+        res.status(200).json(result);
+    else
+        res.status(400).json(bad_req);
 })
 
 module.exports = router;
