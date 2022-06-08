@@ -11,22 +11,24 @@ router.post("/", authJWT, (req, res) => {
     let userId = req.userId.userId;
     let user = users.find(u => u.id === userId);
 
-    if (!user || user.group)
+    if (!user || user.group !== null){
         res.status(400).json(bad_req);
+        return
+    }
 
     let group = new Group(groups.length, req.body.name, req.body.description, [userId])
     
     // TODO: find user using id
     // user.time_added_to_gp = 
-    // user.rule = 'owner';
-    // user.group = group;
+    user.rule = 'owner';
+    user.group = group.id;
 
     groups.push(group);
 
     res.status(200).json({group: {id: group.id}, message: "successful"});
 
     // log:
-    console.log(groups);
+    console.log('---groups:', groups);
     // console.log(group.members);
 })
 
