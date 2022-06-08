@@ -32,6 +32,7 @@ exports.login = function (email, password) {
         user.password
       );
     if (passwordIsCorrect)
+        // I know this way of using tokens is not good ...
         return {token: user.token, message: "successful"};
     return undefined;
 }

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const signup = require('../controller/auth').signup;
-const login = require('../controller/auth').login;
+const signup = require('../controller/authenticate').signup;
+const login = require('../controller/authenticate').login;
 const users = require('../model/dataBaze').users
 const bad_req = require('./jsonResults').bad_req
 
