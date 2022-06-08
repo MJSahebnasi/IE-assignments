@@ -15,7 +15,7 @@ exports.signup = function (name, email, password) {
         return undefined;
 
     let id = users.length;
-    let token = jwt.sign({id: id}, process.env.ACCESS_TOKEN_SECRET);
+    let token = jwt.sign({userId: id}, process.env.ACCESS_TOKEN_SECRET);
     let newUser = new User(id, name, email, bcrypt.hashSync(password, 8), token);
     users.push(newUser);
     return {token: token, message: 'successful'};
