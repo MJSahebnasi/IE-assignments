@@ -1,12 +1,30 @@
-const users = require('../model/dataBaze').users
+const jwt = require('jsonwebtoken')
 
-exports.authorize = function(token) {
-    let userTokens = users.filter(user => user.token);
-    if (userTokens.length === 0)
-        return undefined;
-    if (userTokens.length > 1){
-        console.log('##### WTF ##### token not unique');
-        return undefined;
+const users = require('../model/dataBaze').users
+const bad_req = require('../routes/jsonResults').bad_req
+
+require("dotenv")
+  .config();
+
+const authorizeJWT = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+
+    if (authHeader) {
+        const token = authHeader.split(' ')[1];
+
+        jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+            if (err) {
+                return res.status(400).json(bad_req);
+            }
+
+            req.user = user;
+            next();
+        });
+    } else {
+        res.status(400).json(bad_req);
     }
-    return userTokens[0];
+};
+
+module.exports = {
+    authJWT: authorizeJWT
 }
