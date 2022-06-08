@@ -13,7 +13,7 @@ router.post("/signup", (req, res) => {
         res.status(400).json(bad_req);
 
     // log:
-    console.log('users', users);
+    console.log('--- users:', users);
 })
 
 router.post("/login", (req, res) => {
