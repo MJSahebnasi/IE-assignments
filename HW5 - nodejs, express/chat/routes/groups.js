@@ -23,7 +23,7 @@ router.post("/", authJWT, (req, res) => {
     user.rule = 'owner';
     user.group = group.id;
 
-    groups.push(group);
+    groups.unshift(group);
 
     res.status(200).json({group: {id: group.id}, message: "successful"});
 
