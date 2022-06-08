@@ -4,7 +4,6 @@ const bad_req = require('./jsonResults').bad_req
 const authJWT = require('../controller/authorize').authJWT
 const Group = require('../entities').Group
 const groups = require('../model/dataBaze').groups
-const User = require('../entities').User
 const users = require('../model/dataBaze').users
 
 // create group:
