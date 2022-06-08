@@ -17,7 +17,7 @@ const authorizeJWT = (req, res, next) => {
                 return res.status(400).json(bad_req);
             }
 
-            req.user = user;
+            req.userId = user;
             next();
         });
     } else {

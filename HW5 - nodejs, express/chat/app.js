@@ -8,7 +8,10 @@ const User = Entities.User;
 const Group = Entities.Group;
 
 const authRouter = require('./routes/auth')
+const groupsRouter = require('./routes/groups')
 
+// TODO: /api/v1/
 app.use('/auth', authRouter)
+app.use('/groups', groupsRouter)
 
 app.listen(3000, () => console.log('listening on port 3000 ...'))
