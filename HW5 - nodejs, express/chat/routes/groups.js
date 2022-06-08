@@ -25,7 +25,7 @@ router.post("/", authJWT, (req, res) => {
 
     groups.unshift(group);
 
-    res.status(200).json({group: {id: group.id}, message: "successful"});
+    res.status(200).json({group: {id: group.id.toString()}, message: "successful"});
 
     // log:
     console.log('---groups:', groups);
