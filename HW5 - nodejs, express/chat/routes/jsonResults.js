@@ -1,0 +1,1 @@
+exports.bad_req = {error: { message: 'Bad request!'}}
