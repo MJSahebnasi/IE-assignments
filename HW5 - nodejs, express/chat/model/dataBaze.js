@@ -4,7 +4,7 @@ const User = require('../entities').User
 
 const users = [];
 const groups = [];
-const join_requests = [
+var join_requests = [
     // TODO: remove
     new JoinRequest(2, 1, 3, 1654761665935 ),
     new JoinRequest(1, 1, 2, 1654761561316),
