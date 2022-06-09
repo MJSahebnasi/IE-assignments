@@ -60,8 +60,6 @@ router.post("/accept", authJWT, (req, res) => {
     let userId = req.userId.userId;
     let owner_user = users.find(u => u.id === userId);
 
-    // let groupId = req.body.groupId;
-    // let group = groups.find(g => g.id === groupId);
     let join_request = join_requests.find(jr => jr.id === req.body.joinRequestId);
 
     if (!join_request || !owner_user || join_request.groupId !== owner_user.group || owner_user.rule !== 'owner') {
