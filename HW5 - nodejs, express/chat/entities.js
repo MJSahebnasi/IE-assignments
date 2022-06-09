@@ -21,8 +21,18 @@ class Group {
     }
 }
 
+class JoinRequest {
+    constructor(id, groupId, userId, date) {
+        this.id = id;
+        this.groupId = groupId;
+        this.userId = userId;
+        this.date = date;
+    }
+}
+
 module.exports = {
     User: User,
-    Group, Group
+    Group: Group,
+    JoinRequest: JoinRequest
 }
 
