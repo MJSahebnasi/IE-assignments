@@ -42,4 +42,18 @@ router.get("/", authJWT, (req, res) => {
     res.status(200).json({joinRequests: join_requests.filter(jr => jr.userId === userId)});
 })
 
+// get your group's requests:
+router.get("/group", authJWT, (req, res) => {
+    let userId = req.userId.userId;
+    let user = users.find(u => u.id === userId);
+
+    if (!user || user.rule !== 'owner') {
+        res.status(400).json(bad_req);
+        return
+    }
+
+    res.status(200).json({joinRequests: join_requests.filter(jr => jr.groupId === user.group)});
+})
+
+
 module.exports = router;
