@@ -27,7 +27,19 @@ router.post("/", authJWT, (req, res) => {
 
     // log:
     console.log('---join_requests:', join_requests);
-    // console.log(group.members);
+})
+
+// get your requests:
+router.get("/", authJWT, (req, res) => {
+    let userId = req.userId.userId;
+    let user = users.find(u => u.id === userId);
+
+    if (!user || user.group !== null) {
+        res.status(400).json(bad_req);
+        return
+    }
+
+    res.status(200).json({joinRequests: join_requests.filter(jr => jr.userId === userId)});
 })
 
 module.exports = router;
