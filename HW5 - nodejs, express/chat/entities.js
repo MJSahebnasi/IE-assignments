@@ -30,9 +30,19 @@ class JoinRequest {
     }
 }
 
+class ConnectionRequest {
+    constructor(connectionRequestId, sending_groupId, recieving_groupId, sent) {
+        this.connectionRequestId = connectionRequestId;
+        this.sending_groupId = sending_groupId;
+        this.recieving_groupId = recieving_groupId;
+        this.sent = sent;
+    }
+}
+
 module.exports = {
     User: User,
     Group: Group,
-    JoinRequest: JoinRequest
+    JoinRequest: JoinRequest,
+    ConnectionRequest: ConnectionRequest
 }
 

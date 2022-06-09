@@ -20,7 +20,13 @@ router.post("/", authJWT, (req, res) => {
         return
     }
 
-    let join_request = new JoinRequest(join_requests.length, groupId, userId, Date.now());
+    let id;
+    if (join_requests.length === 0)
+        id = 0;
+    else
+    // first element 'cause array are ordered new to old
+        id = join_requests[0].id+1;
+    let join_request = new JoinRequest(id, groupId, userId, Date.now());
     join_requests.unshift(join_request);
 
     res.status(200).json({ message: "successful" });
