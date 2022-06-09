@@ -15,11 +15,14 @@ const find_connection_of_gp = function(gp_id, gp_connections){
     return gp_connections.find(gc => gc.filter(gp => gp === gp_id).length > 0)
 };
 
+const chats = [];
+
 module.exports = {
     users: users,
     groups: groups,
     join_requests: join_requests,
     connection_requests: connection_requests,
     group_connections: group_connections,
-    find_connection_of_gp: find_connection_of_gp
+    find_connection_of_gp: find_connection_of_gp,
+    chats: chats
 }
