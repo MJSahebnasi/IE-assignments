@@ -74,30 +74,18 @@ router.post("/accept", authJWT, (req, res) => {
     let sender_connection = find_connection_of_gp(connection_request.sending_groupId, group_connections);
     let reciever_connection = find_connection_of_gp(connection_request.recieving_groupId, group_connections);
 
-    ////////////////////////////////
-    console.log('### accept: ###');
-    console.log('###sender id###', connection_request.sending_groupId);
-    console.log('###rec id###', connection_request.recieving_groupId);
-    console.log('###gp cons###', group_connections);
-    console.log('###  ###', sender_connection);
-    console.log('######', reciever_connection);
-    ////////////////////////////////
-
     if(!sender_connection && !reciever_connection){
         // both isolated:
         let new_connection = [connection_request.sending_groupId, connection_request.recieving_groupId];
         group_connections.push(new_connection);
     }
     else if(!sender_connection && reciever_connection){
-        console.log('### rec avail ###')
         reciever_connection.push(connection_request.sending_groupId)
     }
     else if(sender_connection && !reciever_connection){
-        console.log('### sen avail ###')
         sender_connection.push(connection_request.recieving_groupId)
     }
     else{
-        console.log('### both avail ###')
         let new_connection = sender_connection.concat(reciever_connection);
         group_connections.splice(group_connections.indexOf(sender_connection), 1);
         group_connections.splice(group_connections.indexOf(reciever_connection), 1);
