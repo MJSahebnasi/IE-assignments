@@ -17,14 +17,8 @@ router.post("/:student_id/course", async(req, res) => {
     let result = await Student.findOneAndUpdate({ student_id: student_id },
         { $push: { courses: course }}, { returnOriginal: false });
 
-    res.send(result);
-
-    // let result = await student.save();
-    // res.status(200).json({
-    //     studentid: result.student_id, average: result.average,
-    //     courses: result.courses, last_updated: result.last_updated, code: "200",
-    //     message: "student added successfully!"
-    // });
+    res.send({name:req.body.name, id:req.body.id, grade:req.body.grade, code: 200, 
+        message:"course added succesfully!"});
 })
 
 router.get("/:student_id", (req, res) => {
