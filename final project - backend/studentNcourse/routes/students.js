@@ -2,39 +2,39 @@ const express = require('express');
 const router = express.Router();
 const Student = require('../models').Student;
 
+// create new student:
 router.post("/", async(req, res) => {
-    // create new one
-    // return res.status(200).send('new stud');
-
     let student_id = req.body.studentid;
+
+    const allStds = await Student.find();
+    let all_std_ids = allStds.map(s => s.student_id)
+    if (all_std_ids.includes(student_id)){
+        res.status(400).send("there's already a student with this ID :(");
+        return
+    }
+
     let student = new Student({
         student_id: Number(student_id)
     });
 
     let result = await student.save();
-    console.log(result);
-    res.status(200).json(result);
-
-    // let result = signup(req.body.name, req.body.email, req.body.password);
-    // if (result)
-    //     res.status(200).json(result);
-    // else
-    //     res.status(400).json(bad_req);
+    res.status(200).json({studentid: result.student_id, average: result.average, 
+        courses: result.courses, last_updated: result.last_updated, code: "200",
+        message: "student added successfully!"});
 
     // // log:
-    // console.log('--- users:', users);
+    // console.log(result);
 })
 
+// get all students:
 router.get("/", async(req, res) => {
-    // get all studs
     const allStds = await Student.find();
-    return res.status(200).json(allStds);
-
-    // let result = login(req.body.email, req.body.password);
-    // if (result)
-    //     res.status(200).json(result);
-    // else
-    //     res.status(400).json(bad_req);
+    let students = allStds.map(
+        s => {return {studentid: s.student_id, average: s.average, 
+            courses: s.courses, last_updated: s.last_updated}}
+    )
+    return res.status(200).json({size: allStds.length, students: students, code: "200",
+        message: "All students recieved successfully!"});
 })
 
 router.put("/:id", (req, res) => {
