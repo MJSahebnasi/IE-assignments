@@ -1,18 +1,30 @@
 const express = require('express');
 const router = express.Router();
+const Student = require('../models').Student;
+const Course = require('../models').Course;
 
-router.post("/:student_id/course", (req, res) => {
-    // create new one
-    res.status(200).send('new crs for stud');
+router.post("/:student_id/course", async(req, res) => {
+    let student_id = req.params.student_id;
 
-    // let result = signup(req.body.name, req.body.email, req.body.password);
-    // if (result)
-    //     res.status(200).json(result);
-    // else
-    //     res.status(400).json(bad_req);
+    let students_with_id = await Student.find({ student_id: student_id });
+    if (students_with_id.length === 0) {
+        res.status(400).send(`there's no student with this ID (${student_id}) :(`);
+        return
+    }
 
-    // // log:
-    // console.log('--- users:', users);
+    let course = new Course(req.body.id, req.body.name, req.body.grade);
+
+    let result = await Student.findOneAndUpdate({ student_id: student_id },
+        { $push: { courses: course }}, { returnOriginal: false });
+
+    res.send(result);
+
+    // let result = await student.save();
+    // res.status(200).json({
+    //     studentid: result.student_id, average: result.average,
+    //     courses: result.courses, last_updated: result.last_updated, code: "200",
+    //     message: "student added successfully!"
+    // });
 })
 
 router.get("/:student_id", (req, res) => {
