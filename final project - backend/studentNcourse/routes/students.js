@@ -6,7 +6,7 @@ const Student = require('../models').Student;
 router.post("/", async (req, res) => {
     let student_id = req.body.studentid;
 
-    // not a pro move, I know
+    // not a pro move, I know (better approach in update route)
     const retrieved_students = await Student.find();
     let all_std_ids = retrieved_students.map(s => s.student_id)
     if (all_std_ids.includes(student_id)) {
