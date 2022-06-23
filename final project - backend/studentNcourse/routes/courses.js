@@ -11,10 +11,21 @@ router.post("/:student_id/course", async(req, res) => {
         res.status(400).send(`there's no student with this ID (${student_id}) :(`);
         return
     }
+    
+    let crs_names = students_with_id[0].courses.map(c => c.name);
+    let crs_ids = students_with_id[0].courses.map(c => c.course_id);
+    
+    console.log(crs_names)
+    console.log(crs_ids)
+
+    if (crs_names.includes(req.body.name) || crs_ids.includes(req.body.id)){
+        res.status(400).send(`there's already a course with this ID/name :(`);
+        return
+    }
 
     let course = new Course(req.body.id, req.body.name, req.body.grade);
 
-    let result = await Student.findOneAndUpdate({ student_id: student_id },
+    await Student.findOneAndUpdate({ student_id: student_id },
         { $push: { courses: course }}, { returnOriginal: false });
 
     res.send({name:req.body.name, id:req.body.id, grade:req.body.grade, code: 200, 
