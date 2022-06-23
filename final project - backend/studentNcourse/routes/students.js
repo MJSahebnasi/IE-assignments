@@ -1,9 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const Student = require('../models').Student;
 
-router.post("/", (req, res) => {
+router.post("/", async(req, res) => {
     // create new one
-    res.status(200).send('new stud');
+    // return res.status(200).send('new stud');
+
+    let student_id = req.body.studentid;
+    let student = new Student({
+        student_id: Number(student_id)
+    });
+
+    let result = await student.save();
+    console.log(result);
+    res.status(200).json(result);
 
     // let result = signup(req.body.name, req.body.email, req.body.password);
     // if (result)
@@ -15,9 +25,10 @@ router.post("/", (req, res) => {
     // console.log('--- users:', users);
 })
 
-router.get("/", (req, res) => {
+router.get("/", async(req, res) => {
     // get all studs
-    res.status(200).send('all studs');
+    const allStds = await Student.find();
+    return res.status(200).json(allStds);
 
     // let result = login(req.body.email, req.body.password);
     // if (result)

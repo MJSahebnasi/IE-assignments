@@ -11,10 +11,10 @@ var courseSchema = new mongoose.Schema(
 
 var studentSchema = new mongoose.Schema(
     {
-      student_id: Number,
-      last_updated: Date,
-      average: Number,
-      courses: [{ type: Schema.Types.ObjectId, ref: 'Course' }]
+      student_id: {type: Number, required: true},
+      last_updated: {type: Date, default: Date.now()},
+      average: {type: Number, default: 0.0},
+      courses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' , default: []}]
     }
 );
 
