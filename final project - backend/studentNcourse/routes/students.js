@@ -73,15 +73,20 @@ router.put("/:id", async (req, res) => {
     });
 })
 
-router.delete("/:id", (req, res) => {
-    // delete a stud
-    res.status(200).send('delete a stud');
-
-    // let result = login(req.body.email, req.body.password);
-    // if (result)
-    //     res.status(200).json(result);
-    // else
-    //     res.status(400).json(bad_req);
+// delete a student:
+router.delete("/:id", async (req, res) => {
+    let student_id = req.params.id;
+    let students_with_id = await Student.find({ student_id: student_id });
+    if (students_with_id.length === 0) {
+        res.status(400).send(`there's no student with this ID (${student_id}) :(`);
+        return
+    }
+    let result = await Student.findOneAndDelete({ student_id: student_id });
+    res.status(200).json({
+        studentid: result.student_id, average: result.average,
+        courses: result.courses, last_updated: result.last_updated, code: "200",
+        message: 'student deleted successfully!'
+    });
 })
 
 module.exports = router;
