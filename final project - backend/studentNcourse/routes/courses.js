@@ -3,6 +3,10 @@ const router = express.Router();
 const Student = require('../models').Student;
 const Course = require('../models').Course;
 
+function calc_avr(grades){
+    return grades.reduce((partialSum, a) => partialSum + a, 0)/grades.length;
+}
+
 router.post("/:student_id/course", async(req, res) => {
     let student_id = req.params.student_id;
 
@@ -11,7 +15,7 @@ router.post("/:student_id/course", async(req, res) => {
         res.status(400).send(`there's no student with this ID (${student_id}) :(`);
         return
     }
-    
+
     let crs_names = students_with_id[0].courses.map(c => c.name);
     let crs_ids = students_with_id[0].courses.map(c => c.course_id);
     
@@ -27,6 +31,12 @@ router.post("/:student_id/course", async(req, res) => {
 
     await Student.findOneAndUpdate({ student_id: student_id },
         { $push: { courses: course }}, { returnOriginal: false });
+
+    // updating average
+    students_with_id = await Student.find({ student_id: student_id });
+    let grades = students_with_id[0].courses.map(c => c.grade);
+    await Student.findOneAndUpdate({ student_id: student_id },
+        { average: calc_avr(grades) }, { returnOriginal: false });
 
     res.send({name:req.body.name, id:req.body.id, grade:req.body.grade, code: 200, 
         message:"course added succesfully!"});
