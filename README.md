@@ -33,7 +33,7 @@ a simple shop
 the implementation of [this API](https://app.swaggerhub.com/apis/nimah79/Messenger/1.0.0)
 
 ### midterm project
-wrapping up every thing learnt in frontend.
+wrapping up everything learnt in frontend part
 
 ### final project
-Node.js + Express + Mongo DB (using [mongoose](https://mongoosejs.com/))
+Node.js + Express + MongoDB (using [mongoose](https://mongoosejs.com/))
