@@ -25,8 +25,15 @@ React warmup:
 <img src="https://github.com/MJSahebnasi/IE-assignments/blob/main/reports/cinema2.png" width="600" >
 
 ### HW4 - React2
-a simple shop:
+a simple shop
+
 <img src="https://github.com/MJSahebnasi/IE-assignments/blob/main/reports/hw4-shop.gif" width="600" >
 
 ### HW5 - Node.js, Express
 the implementation of [this API](https://app.swaggerhub.com/apis/nimah79/Messenger/1.0.0)
+
+### midterm project
+wrapping up every thing learnt in frontend.
+
+### final project
+Node.js + Express + Mongo DB (using [mongoose](https://mongoosejs.com/))
