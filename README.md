@@ -1,5 +1,6 @@
 # IE-assignments
-React & Node.js
+<b>React & Node.js</b>
+
 Internet Engineering Course Assignments
 
 ### HW2 - HTML, CSS
